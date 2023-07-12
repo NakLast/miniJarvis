@@ -7,7 +7,7 @@ Create miniJarvis with: API-ChatGPI and API-speechToText
 - API open AI :white_check_mark:
   - Use API open AI of chatGPT.
 - Text to speech
-  - ... waiting.
+  - ... waiting. (Testing speechSynthesis)
 - Ai avatar
   - Pull model avatar create AI avatar from Maxima.
   - Use Aframe-react into create AI avatar on web page.
