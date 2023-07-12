@@ -3,6 +3,7 @@ Create miniJarvis with:
 + API-ChatGPI
 + Speech to text
 + Text to speech
++ AI avatar
 
 # process work
 - Speech to text :white_check_mark:
