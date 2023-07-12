@@ -3,8 +3,13 @@ import { Button, Input } from 'antd'
 const { Configuration, OpenAIApi } = require("openai")
 
 const { TextArea } = Input
+
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
 const mic = new SpeechRecognition()
+
+const msg = new SpeechSynthesisUtterance()
+msg.text = "Hello World"
+window.speechSynthesis.speak(msg)
 
 mic.continuous = true
 mic.interimResults = true
@@ -46,6 +51,9 @@ const Main = () => {
             })
             setNote(response.data.choices?.[0].text)
             // console.log(response)
+            // msg.text = `${note}`
+            // msg.text = "Hello World"
+            // window.speechSynthesis.speak(msg)
         }
 
         mic.onerror = event => {
@@ -64,38 +72,27 @@ const Main = () => {
         mic.stop()
     }
 
-    // const handleInputChange = async e => {
-    //     setText(e.target.value)
-    //     const question = e.target.value
-    //     const response = await openai.createCompletion({
-    //         model: "text-davinci-003",
-    //         prompt: `q: ${question}\n a: `,
-    //         temperature: 0,
-    //         max_tokens: 100,
-    //         top_p: 1,
-    //         frequency_penalty: 0.0,
-    //         presence_penalty: 0.0,
-    //         stop: ["\n"],
-    //     })
-    //     setNote(response.data.choices?.[0].text)
-    // }
-
     return (
         <>
             <br /><br />
-            <div>
-                <Button onClick={startListening} disabled={isListening}>
-                    Start Listening
-                </Button>
-                <Button onClick={stopListening} disabled={!isListening}>
-                    Stop Listening
-                </Button>
-            </div>
+            <Button onClick={startListening} disabled={isListening}>
+                Start Listening
+            </Button>
+            <Button onClick={stopListening} disabled={!isListening}>
+                Stop Listening
+            </Button>
             <br /><br />
-            <Input type="text" id="inputText" placeholder="Questions" value={text} />
+            <TextArea id="inputText" placeholder="Questions" value={text} />
             <br /><br />
             <TextArea id="outputText" placeholder="Answers" value={note} />
-        </>
+            <br /><br />
+            {/* <Button>
+                Start Talking
+            </Button>
+            <Button>
+                Stop Talking
+            </Button> */}
+        </> 
     )
 }
 
