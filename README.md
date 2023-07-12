@@ -1,5 +1,8 @@
 # miniJarvis
-Create miniJarvis with: API-ChatGPI and API-speechToText
+Create miniJarvis with:
++ API-ChatGPI
++ Speech to text
++ Text to speech
 
 # process work
 - Speech to text :white_check_mark:
