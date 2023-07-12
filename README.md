@@ -8,6 +8,6 @@ Create miniJarvis with: API-ChatGPI and API-speechToText
   - Use API open AI of chatGPT.
 - Text to speech :white_check_mark:
   - Use speechSynthesis(https://dev.to/asaoluelijah/text-to-speech-in-3-lines-of-javascript-b8h#:~:text=var%20msg%20%3D%20new%20SpeechSynthesisUtterance()%3B,speak(msg)%3B)
-- Ai avatar ☑️
+- Ai avatar :un_check_mark:
   - Pull model avatar create AI avatar from Maxima.
   - Use Aframe-react into create AI avatar on web page.
