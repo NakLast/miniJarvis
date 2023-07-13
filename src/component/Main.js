@@ -6,14 +6,13 @@ const { TextArea } = Input
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
 const mic = new SpeechRecognition()
-
 const msg = new SpeechSynthesisUtterance()
+
 msg.text = "Hello World"
 window.speechSynthesis.speak(msg)
 
-mic.continuous = true
-mic.interimResults = true
 mic.lang = 'th-Th'
+msg.lang = 'th_th'
 
 const configuration = new Configuration({
     apiKey: "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",
@@ -52,9 +51,9 @@ const Main = () => {
             setNote(response.data.choices?.[0].text)
             // console.log(response)
             // msg.text = `${note}`
-            // msg.text = "Hello World"
-            // window.speechSynthesis.speak(msg)
         }
+        msg.text = note
+        window.speechSynthesis.speak(msg)
 
         mic.onerror = event => {
             console.error('Speech recognition error:', event.error)
