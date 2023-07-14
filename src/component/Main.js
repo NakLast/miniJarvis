@@ -8,8 +8,8 @@ const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecogni
 const mic = new SpeechRecognition()
 const msg = new SpeechSynthesisUtterance()
 
-msg.text = "Hello World"
-window.speechSynthesis.speak(msg)
+// msg.text = "Hello World"
+// window.speechSynthesis.speak(msg)
 
 mic.lang = 'th-Th'
 msg.lang = 'th_th'
@@ -52,6 +52,7 @@ const Main = () => {
             // console.log(response)
             // msg.text = `${note}`
         }
+        
         msg.text = note
         window.speechSynthesis.speak(msg)
 
